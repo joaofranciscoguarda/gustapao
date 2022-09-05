@@ -5,3 +5,10 @@ from django.db import models
 # PRODUCTS
 # CATEGORIES
 # IMAGES
+
+class Product(models.Model):
+  ...
+  
+class Category(models.Model):
+  ...
+
