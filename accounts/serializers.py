@@ -5,8 +5,8 @@ from .models import Account
 class SerializerAccounts(serializers.ModelSerializer):
     class Meta:
         models = Account
-        fields = ["username","email","first_name","last_name","cellphone","is_staff"]
-        read_only_fields  = ['date_joined' , 'is_active', 'is_superuser']
+        fields = ["username","email","first_name","last_name","cellphone"]
+        read_only_fields  = ['date_joined' , 'is_active', 'is_superuser', 'is_staff']
         extra_kwargs = {'password': {'write_only': True}}
         
         def create(self, validate_data: dict):
