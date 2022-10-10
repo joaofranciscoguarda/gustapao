@@ -2,23 +2,42 @@
 
 # Instruções:
 ## Crie o ambiente virtual
- 
-### python -m venv venv
-
-##Ative o venv
-
-# linux: 
-
-### source venv/bin/activate
+```
+python -m venv venv
+source venv/bin/activate
+```
+## Ative o venv
 
 ### Instale as dependências
 
-### pip install -r requirements.txt
+```
+pip install -r requirements.txt
+```
 
-##Execute as migrações
+## Rodando / Run:
 
-### ./manage.py migrate
+## Docker-compose
+Nota: Crie um arquivo .env de acordo com o .env.example
+```
+docker-compose up 
+#depois de rodar, acesse o shell do web e rode as migrations
+./manage.py migrate
+```
 
+## Sqlite3
+
+```
+TEST=TEST ./manage.py migrate
+TEST=TEST ./manage.py runserver
+```
+
+# PostgreSQL
+Nota: Crie um banco de dados e adicione as informações ao .env de acordo com o .env.example
+
+```
+./manage.py migrate
+./manage.py runserver
+```
 
 ### Este projeto visa ajudar uma panificadora localizada em Curitiba, Brasil, que poossui um excelente atendimento e comidas, porém, não possui um sistema dedicado ao gerenciamento de pedidos.
 
